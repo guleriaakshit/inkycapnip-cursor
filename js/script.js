@@ -5,28 +5,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const navList = document.querySelector(".nav__list");
 
   if (navToggle && navList) {
-    navToggle.addEventListener("click", () => {
+    // Toggle menu when hamburger is clicked
+    navToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
       navList.classList.toggle("nav__list--open");
-      navToggle.setAttribute(
-        "aria-expanded",
-        navList.classList.contains("nav__list--open")
-      );
     });
 
-    // Close menu when clicking a nav link
+    // Close menu when clicking a link
     const navLinks = document.querySelectorAll(".nav__link, .contact-btn");
     navLinks.forEach((link) => {
       link.addEventListener("click", () => {
         navList.classList.remove("nav__list--open");
-        navToggle.setAttribute("aria-expanded", "false");
       });
     });
 
     // Close menu when clicking outside
     document.addEventListener("click", (e) => {
-      if (!e.target.closest(".nav__container")) {
+      if (!e.target.closest(".nav")) {
         navList.classList.remove("nav__list--open");
-        navToggle.setAttribute("aria-expanded", "false");
       }
     });
   }
@@ -106,9 +102,8 @@ function isValidEmail(email) {
 }
 
 // Lazy loading for images
-document.addEventListener("DOMContentLoaded", () => {
-  const lazyImages = document.querySelectorAll("img[data-src]");
-
+const lazyImages = document.querySelectorAll("img[data-src]");
+if (lazyImages.length > 0) {
   const imageObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -121,4 +116,4 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   lazyImages.forEach((img) => imageObserver.observe(img));
-});
+}
