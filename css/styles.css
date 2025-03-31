@@ -447,6 +447,55 @@ h6 {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .section {
+    padding: 2rem 0;
+  }
+
+  .featured {
+    gap: 2rem;
+  }
+
+  .book-content {
+    gap: 1.5rem;
+  }
+
+  .book-summary-cta {
+    padding: 3rem 0;
+  }
+
+  .book-summary p {
+    margin-bottom: 1rem;
+  }
+
+  .poem-content p {
+    margin-bottom: 1rem;
+  }
+
+  .social-links {
+    gap: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .grid {
+    gap: 1rem;
+  }
+
+  .nav__list {
+    gap: 0.5rem;
+  }
+
+  .featured > article {
+    padding-top: 2rem;
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  .header {
+    padding: calc(var(--header-height) + 1rem) 0 2rem;
+  }
+
   .nav__container {
     flex-direction: row;
     flex-wrap: wrap;
@@ -484,26 +533,9 @@ h6 {
     font-size: 1.24rem;
   }
 
-  .featured {
-    gap: 4rem;
-  }
-
-  .featured__book {
-    flex-direction: column;
-    text-align: center;
-  }
-
   .book-cover {
     width: 100%;
     max-width: 400px;
-  }
-
-  .book-content {
-    gap: 2rem;
-  }
-
-  .grid {
-    flex-direction: column;
   }
 
   .contact-btn {
