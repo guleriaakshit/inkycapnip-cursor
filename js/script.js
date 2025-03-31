@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     navToggle.addEventListener("click", (e) => {
       e.stopPropagation();
       navList.classList.toggle("nav__list--open");
+      navToggle.classList.toggle("is-active");
     });
 
     // Close menu when clicking a link
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     navLinks.forEach((link) => {
       link.addEventListener("click", () => {
         navList.classList.remove("nav__list--open");
+        navToggle.classList.remove("is-active");
       });
     });
 
@@ -23,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("click", (e) => {
       if (!e.target.closest(".nav")) {
         navList.classList.remove("nav__list--open");
+        navToggle.classList.remove("is-active");
       }
     });
   }

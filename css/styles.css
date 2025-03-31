@@ -135,8 +135,57 @@ h6 {
   background: none;
   border: none;
   font-size: 1.5rem;
-  color: var(--color-dark-gray);
+  color: var(--text-primary);
   cursor: pointer;
+  padding: 0.5rem;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.nav__toggle .hamburger-icon,
+.nav__toggle .hamburger-icon::before,
+.nav__toggle .hamburger-icon::after {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 24px;
+  background-color: var(--text-primary);
+  border-radius: 2px;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.nav__toggle .hamburger-icon {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nav__toggle .hamburger-icon::before {
+  content: "";
+  top: -8px;
+  left: 0;
+}
+
+.nav__toggle .hamburger-icon::after {
+  content: "";
+  bottom: -8px;
+  left: 0;
+}
+
+.nav__toggle.is-active .hamburger-icon {
+  background-color: transparent;
+}
+
+.nav__toggle.is-active .hamburger-icon::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.nav__toggle.is-active .hamburger-icon::after {
+  bottom: 0;
+  transform: rotate(-45deg);
 }
 
 .nav__list {
@@ -584,12 +633,9 @@ h6 {
   .nav__toggle {
     display: block;
     order: 1;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: var(--text-primary);
-    cursor: pointer;
+    margin-left: auto;
     padding: 0.5rem;
+    z-index: 1001;
   }
 
   .logo {
