@@ -1,5 +1,5 @@
 /* Import Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Chonburi&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chonburi&family=Special+Elite&display=swap");
 
 /* CSS Variables */
 :root {
@@ -11,7 +11,7 @@
   --bg-primary: var(--color-white);
   --text-primary: var(--color-black);
   --border-color: var(--color-black);
-  --font-verdana: Verdana, Geneva, Tahoma, sans-serif;
+  --font-verdana: "Special Elite", cursive;
   --font-chonburi: "Chonburi", cursive;
   --spacing-unit: 1rem;
   --border-radius: 0;
@@ -38,6 +38,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  font-size: 1.3rem; /* Base font size for paragraphs */
 }
 
 /* Layout Components */
@@ -90,7 +91,7 @@ h6 {
 /* Logo */
 .logo {
   font-family: var(--font-chonburi);
-  font-size: 1.6rem;
+  font-size: 2.1rem;
   font-weight: 700;
   text-decoration: none;
   color: var(--text-primary);
@@ -153,6 +154,7 @@ h6 {
   text-decoration: none;
   font-family: var(--font-verdana);
   font-weight: 400;
+  font-size: 1.17rem;
   transition: opacity var(--transition-speed) ease;
   display: flex;
   align-items: center;
@@ -279,6 +281,7 @@ h6 {
 .poem-content p {
   margin-bottom: 2rem;
   text-align: center;
+  font-size: 1.3rem;
 }
 
 .poem-content p:last-child {
@@ -354,10 +357,50 @@ h6 {
   font-family: var(--font-verdana);
   line-height: 1.8;
   margin-bottom: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .book-summary p:last-child {
   margin-bottom: 0;
+}
+
+/* Book Summary CTA Section */
+.book-summary-cta {
+  text-align: center;
+  padding: 6rem 0;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.book-summary-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  height: 1px;
+  background-color: var(--text-primary);
+  opacity: 0.2;
+}
+
+.book-summary-cta h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-family: var(--font-verdana);
+}
+
+.book-summary-cta p {
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
+  color: var(--text-primary);
+}
+
+.book-summary-cta .contact-btn {
+  display: inline-flex;
+  padding: 0.8rem 2rem;
+  font-size: 1.43rem;
 }
 
 /* Footer */
@@ -417,7 +460,7 @@ h6 {
 
   .logo {
     order: 0;
-    font-size: 1.3rem;
+    font-size: 1.69rem;
   }
 
   .nav__list {
@@ -438,7 +481,7 @@ h6 {
     width: 100%;
     justify-content: center;
     padding: 0.5rem 0;
-    font-size: 0.95rem;
+    font-size: 1.24rem;
   }
 
   .featured {
@@ -467,7 +510,7 @@ h6 {
     width: 100%;
     justify-content: center;
     padding: 0.3rem;
-    font-size: 0.9rem;
+    font-size: 1.17rem;
   }
 
   .book-summary {
@@ -522,7 +565,7 @@ h6 {
   color: var(--bg-primary);
   padding: 0.3rem 1rem;
   font-family: var(--font-verdana);
-  font-size: 0.9rem;
+  font-size: 1.17rem;
   display: flex;
   align-items: center;
   gap: 0.4rem;
