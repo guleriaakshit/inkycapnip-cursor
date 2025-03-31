@@ -34,7 +34,7 @@
           </a>
         </li>
         <li class="nav__item">
-          <a href="black-and-white.html" class="nav__link">
+          <a href="#latest-books" class="nav__link">
             <i class="fas fa-adjust"></i>
             <span>Black & White</span>
           </a>
@@ -46,9 +46,9 @@
           </a>
         </li>
         <li class="nav__item">
-          <a href="mailto:inkycapnip@gmail.com" class="contact-btn">
-            <i class="fas fa-envelope"></i>
-            <span>Contact</span>
+          <a href="https://ko-fi.com/s/867fb8d348" class="contact-btn">
+            <i class="fas fa-book"></i>
+            <span>Buy My Book</span>
           </a>
         </li>
       </ul>
@@ -146,14 +146,16 @@
           </article>
 
           <!-- Latest Books -->
-          <article class="featured__book fade-in">
+          <article id="latest-books" class="featured__book fade-in">
             <h2>
               <i class="fas fa-book"></i>
               Latest Books
             </h2>
             <div class="book-content">
-              <img src="assets/book-cover.jpg" alt="Black and White Book Cover" class="book-cover"
-                data-src="assets/book-cover.jpg">
+              <a href="https://ko-fi.com/s/867fb8d348" class="book-cover-link">
+                <img src="assets/book-cover.png" alt="Black and White Book Cover" class="book-cover"
+                  data-src="assets/book-cover.png">
+              </a>
               <div class="book-summary">
                 <h3>Finding My Mind Again</h3>
                 <p>Inky lost their mind in December of 2022. They were told by medical professionals that they would
@@ -166,6 +168,12 @@
                 <p>I hope the similarly disturbed can find comfort in the feelings our society stigmatizes.</p>
                 <p>You might be able to find your mind again.</p>
                 <p>You are not alone 💜</p>
+                <div class="book-actions">
+                  <a href="https://ko-fi.com/s/867fb8d348" class="buy-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Buy Now</span>
+                  </a>
+                </div>
               </div>
             </div>
           </article>
@@ -213,15 +221,6 @@
 
   <!-- Scripts -->
   <script src="js/script.js"></script>
-  <script>
-    // Navigation toggle
-    const navToggle = document.querySelector('.nav__toggle');
-    const navList = document.querySelector('.nav__list');
-
-    navToggle.addEventListener('click', () => {
-      navList.classList.toggle('nav__list--open');
-    });
-  </script>
 </body>
 
 </html>

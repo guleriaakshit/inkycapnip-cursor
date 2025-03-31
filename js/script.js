@@ -12,6 +12,23 @@ document.addEventListener("DOMContentLoaded", () => {
         navList.classList.contains("nav__list--open")
       );
     });
+
+    // Close menu when clicking a nav link
+    const navLinks = document.querySelectorAll(".nav__link, .contact-btn");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        navList.classList.remove("nav__list--open");
+        navToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".nav__container")) {
+        navList.classList.remove("nav__list--open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
+    });
   }
 
   // Add fade-in animation to elements
@@ -87,19 +104,6 @@ function isValidEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 }
-
-// Close mobile menu when clicking outside
-document.addEventListener("click", (e) => {
-  const navList = document.querySelector(".nav__list");
-  const navToggle = document.querySelector(".nav__toggle");
-
-  if (navList && navList.classList.contains("nav__list--open")) {
-    if (!e.target.closest(".nav__container")) {
-      navList.classList.remove("nav__list--open");
-      navToggle.setAttribute("aria-expanded", "false");
-    }
-  }
-});
 
 // Lazy loading for images
 document.addEventListener("DOMContentLoaded", () => {
