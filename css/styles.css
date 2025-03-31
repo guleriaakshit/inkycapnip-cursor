@@ -433,32 +433,68 @@ h6 {
   gap: 1rem;
 }
 
-.buy-btn {
+.buy-btn,
+.contact-btn {
   background: var(--text-primary);
-  border: 1px solid var(--text-primary);
+  border: 2px solid var(--text-primary);
   color: var(--bg-primary);
-  padding: 1rem 2.5rem;
+  padding: 0.7rem 1.5rem;
   font-family: var(--font-verdana);
-  font-size: 1.3rem;
+  font-size: 1.17rem;
   display: inline-flex;
   align-items: center;
-  gap: 0.8rem;
+  justify-content: center;
+  gap: 0.6rem;
   cursor: pointer;
   transition: all var(--transition-speed) ease;
-  border-radius: 12px;
+  border-radius: 50px;
   text-decoration: none;
+  line-height: 1;
+  height: auto;
   font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
 }
 
-.buy-btn:hover {
-  background: none;
-  color: var(--text-primary);
+.buy-btn::before,
+.contact-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.buy-btn:hover,
+.contact-btn:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
   transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
   text-decoration: none;
 }
 
-.buy-btn i {
+.buy-btn:hover::before,
+.contact-btn:hover::before {
+  left: 100%;
+}
+
+.buy-btn i,
+.contact-btn i {
   font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-1px);
 }
 
 /* Footer */
@@ -597,6 +633,7 @@ h6 {
     font-size: 1.5rem;
   }
 
+  .buy-btn,
   .contact-btn {
     width: auto;
     margin: 1rem auto;
@@ -614,11 +651,6 @@ h6 {
 
   .book-actions {
     margin-top: 1.5rem;
-  }
-
-  .buy-btn {
-    padding: 0.8rem 2rem;
-    font-size: 1.2rem;
   }
 
   .footer {
@@ -683,66 +715,6 @@ h6 {
 /* Theme Toggle */
 .theme-toggle {
   display: none;
-}
-
-/* Contact Button */
-.contact-btn {
-  background: var(--text-primary);
-  border: 2px solid var(--text-primary);
-  color: var(--bg-primary);
-  padding: 0.7rem 1.5rem;
-  font-family: var(--font-verdana);
-  font-size: 1.17rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  cursor: pointer;
-  transition: all var(--transition-speed) ease;
-  border-radius: 50px;
-  text-decoration: none;
-  line-height: 1;
-  height: auto;
-  font-weight: bold;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
-}
-
-.contact-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: 0.5s;
-}
-
-.contact-btn:hover {
-  background: var(--text-primary);
-  color: var(--bg-primary);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-  text-decoration: none;
-}
-
-.contact-btn:hover::before {
-  left: 100%;
-}
-
-.contact-btn i {
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translateY(-4px);
 }
 
 .nav__item:last-child {
