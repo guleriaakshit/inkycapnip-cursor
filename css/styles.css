@@ -135,57 +135,8 @@ h6 {
   background: none;
   border: none;
   font-size: 1.5rem;
-  color: var(--text-primary);
+  color: var(--color-dark-gray);
   cursor: pointer;
-  padding: 0.5rem;
-  position: relative;
-  width: 30px;
-  height: 30px;
-  transition: transform 0.3s ease;
-}
-
-.nav__toggle .hamburger-icon,
-.nav__toggle .hamburger-icon::before,
-.nav__toggle .hamburger-icon::after {
-  display: block;
-  position: absolute;
-  height: 2px;
-  width: 24px;
-  background-color: var(--text-primary);
-  border-radius: 2px;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-.nav__toggle .hamburger-icon {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.nav__toggle .hamburger-icon::before {
-  content: "";
-  top: -8px;
-  left: 0;
-}
-
-.nav__toggle .hamburger-icon::after {
-  content: "";
-  bottom: -8px;
-  left: 0;
-}
-
-.nav__toggle.is-active .hamburger-icon {
-  background-color: transparent;
-}
-
-.nav__toggle.is-active .hamburger-icon::before {
-  top: 0;
-  transform: rotate(45deg);
-}
-
-.nav__toggle.is-active .hamburger-icon::after {
-  bottom: 0;
-  transform: rotate(-45deg);
 }
 
 .nav__list {
@@ -482,68 +433,32 @@ h6 {
   gap: 1rem;
 }
 
-.buy-btn,
-.contact-btn {
+.buy-btn {
   background: var(--text-primary);
-  border: 2px solid var(--text-primary);
+  border: 1px solid var(--text-primary);
   color: var(--bg-primary);
-  padding: 0.7rem 1.5rem;
+  padding: 1rem 2.5rem;
   font-family: var(--font-verdana);
-  font-size: 1.17rem;
+  font-size: 1.3rem;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
+  gap: 0.8rem;
   cursor: pointer;
   transition: all var(--transition-speed) ease;
-  border-radius: 50px;
+  border-radius: 12px;
   text-decoration: none;
-  line-height: 1;
-  height: auto;
   font-weight: bold;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
 }
 
-.buy-btn::before,
-.contact-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: 0.5s;
-}
-
-.buy-btn:hover,
-.contact-btn:hover {
-  background: var(--text-primary);
-  color: var(--bg-primary);
+.buy-btn:hover {
+  background: none;
+  color: var(--text-primary);
   transform: translateY(-2px);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
   text-decoration: none;
 }
 
-.buy-btn:hover::before,
-.contact-btn:hover::before {
-  left: 100%;
-}
-
-.buy-btn i,
-.contact-btn i {
+.buy-btn i {
   font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translateY(-4px);
 }
 
 /* Footer */
@@ -633,9 +548,12 @@ h6 {
   .nav__toggle {
     display: block;
     order: 1;
-    margin-left: auto;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    cursor: pointer;
     padding: 0.5rem;
-    z-index: 1001;
   }
 
   .logo {
@@ -679,7 +597,6 @@ h6 {
     font-size: 1.5rem;
   }
 
-  .buy-btn,
   .contact-btn {
     width: auto;
     margin: 1rem auto;
@@ -697,6 +614,11 @@ h6 {
 
   .book-actions {
     margin-top: 1.5rem;
+  }
+
+  .buy-btn {
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
   }
 
   .footer {
@@ -761,6 +683,66 @@ h6 {
 /* Theme Toggle */
 .theme-toggle {
   display: none;
+}
+
+/* Contact Button */
+.contact-btn {
+  background: var(--text-primary);
+  border: 2px solid var(--text-primary);
+  color: var(--bg-primary);
+  padding: 0.7rem 1.5rem;
+  font-family: var(--font-verdana);
+  font-size: 1.17rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+  border-radius: 50px;
+  text-decoration: none;
+  line-height: 1;
+  height: auto;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.contact-btn:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+}
+
+.contact-btn:hover::before {
+  left: 100%;
+}
+
+.contact-btn i {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-4px);
 }
 
 .nav__item:last-child {
