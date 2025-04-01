@@ -1,5 +1,5 @@
 /* Import Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Chonburi&family=Special+Elite&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Rufina:wght@400;700&display=swap");
 
 /* CSS Variables */
 :root {
@@ -11,8 +11,8 @@
   --bg-primary: var(--color-white);
   --text-primary: var(--color-black);
   --border-color: var(--color-black);
-  --font-verdana: "Special Elite", cursive;
-  --font-chonburi: "Chonburi", cursive;
+  --font-body: "Roboto", sans-serif;
+  --font-heading: "Rufina", serif;
   --spacing-unit: 1rem;
   --border-radius: 0;
   --transition-speed: 0.3s;
@@ -30,7 +30,7 @@
 }
 
 body {
-  font-family: var(--font-verdana);
+  font-family: var(--font-body);
   line-height: 1.6;
   color: var(--text-primary);
   background-color: var(--bg-primary);
@@ -79,18 +79,18 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-verdana);
+  font-family: var(--font-heading);
   letter-spacing: -0.02em;
   margin-bottom: 1rem;
 }
 
 .special-text {
-  font-family: var(--font-verdana);
+  font-family: var(--font-heading);
 }
 
 /* Logo */
 .logo {
-  font-family: var(--font-chonburi);
+  font-family: var(--font-heading);
   font-size: 2.1rem;
   font-weight: 700;
   text-decoration: none;
@@ -152,8 +152,8 @@ h6 {
 .nav__link {
   color: var(--color-black);
   text-decoration: none;
-  font-family: var(--font-verdana);
-  font-weight: 400;
+  font-family: var(--font-body);
+  font-weight: 500;
   font-size: 1.17rem;
   transition: opacity var(--transition-speed) ease;
   display: inline-flex;
@@ -193,9 +193,9 @@ h6 {
 }
 
 .header__greeting {
-  font-family: var(--font-verdana);
-  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-family: var(--font-body);
   font-weight: 300;
+  font-size: clamp(1.5rem, 4vw, 2rem);
   text-transform: none;
   letter-spacing: 0.02em;
   margin-bottom: 1rem;
@@ -203,6 +203,8 @@ h6 {
 }
 
 .header__username {
+  font-family: var(--font-heading);
+  font-weight: 700;
   font-size: clamp(2.5rem, 8vw, 4rem);
   margin-bottom: 1rem;
   color: var(--color-black);
@@ -210,6 +212,8 @@ h6 {
 }
 
 .header__tagline {
+  font-family: var(--font-body);
+  font-weight: 300;
   font-size: clamp(1rem, 3vw, 1.2rem);
   max-width: 600px;
   margin: 0 auto;
@@ -281,7 +285,8 @@ h6 {
 }
 
 .poem-content {
-  font-family: var(--font-verdana);
+  font-family: var(--font-body);
+  font-weight: 400;
   line-height: 1.8;
   max-width: 800px;
   margin: 2rem auto 0;
@@ -298,9 +303,10 @@ h6 {
 }
 
 .featured__poem h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
   font-size: 2rem;
   margin-top: 1rem;
-  font-family: var(--font-verdana);
   text-align: center;
 }
 
@@ -365,14 +371,16 @@ h6 {
 }
 
 .book-summary h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
   font-size: 2rem;
-  font-family: var(--font-verdana);
   margin-bottom: 2rem;
   text-align: center;
 }
 
 .book-summary p {
-  font-family: var(--font-verdana);
+  font-family: var(--font-body);
+  font-weight: 400;
   line-height: 1.8;
   margin-bottom: 1.5rem;
   font-size: 1.3rem;
@@ -408,14 +416,17 @@ h6 {
 }
 
 .book-summary-cta h2 {
+  font-family: var(--font-heading);
+  font-weight: 700;
   font-size: 2rem;
   margin: 0;
-  font-family: var(--font-verdana);
 }
 
 .book-summary-cta p {
   margin: 0;
   font-size: 1.3rem;
+  font-family: var(--font-body);
+  font-weight: 400;
   color: var(--text-primary);
 }
 
@@ -439,7 +450,8 @@ h6 {
   border: 2px solid var(--text-primary);
   color: var(--bg-primary);
   padding: 0.7rem 1.5rem;
-  font-family: var(--font-verdana);
+  font-family: var(--font-body);
+  font-weight: 500;
   font-size: 1.17rem;
   display: inline-flex;
   align-items: center;
@@ -451,7 +463,6 @@ h6 {
   text-decoration: none;
   line-height: 1;
   height: auto;
-  font-weight: bold;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
